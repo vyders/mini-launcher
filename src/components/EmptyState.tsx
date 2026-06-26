@@ -1,15 +1,35 @@
 import { FC } from "react";
-import { PanelSection, PanelSectionRow } from "@decky/ui";
+import {
+    PanelSection,
+    PanelSectionRow,
+    ButtonItem,
+} from "@decky/ui";
 
-export const EmptyState: FC = () => {
+interface Props {
+    onAdd: () => void;
+}
+
+export const EmptyState: FC<Props> = ({ onAdd }) => {
     return (
         <PanelSection title="Mini Launcher">
             <PanelSectionRow>
-                <div>No launchers yet.</div>
+                <div>No launchers found.</div>
             </PanelSectionRow>
 
             <PanelSectionRow>
-                <div>Add your first launcher to get started.</div>
+                <div>Create your first launcher.</div>
+            </PanelSectionRow>
+
+            <PanelSectionRow>
+                <ButtonItem
+                    layout="below"
+                    onClick={() => {
+                        console.log("Add Launcher clicked");
+                        onAdd();
+                    }}
+                >
+                    Add Launcher
+                </ButtonItem>
             </PanelSectionRow>
         </PanelSection>
     );

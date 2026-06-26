@@ -1,28 +1,31 @@
 import os
 import decky
 
+from settings import LauncherStore
+
 
 class Plugin:
     async def get_launchers(self):
         """
-        Return saved launchers.
-        Implementation will be added later.
+        Return all saved launchers.
         """
-        return []
+        return LauncherStore.load()
 
     async def save_launchers(self, launchers):
         """
         Save launcher list.
-        Implementation will be added later.
         """
-        return
+        LauncherStore.save(launchers)
+        return True
 
     async def open_launcher(self, url: str):
         """
         Open launcher URL.
-        Implementation will be added later.
+
+        (Implementation will be added in the next sprint.)
         """
-        return
+        decky.logger.info(f"Open launcher requested: {url}")
+        return True
 
     async def _main(self):
         decky.logger.info("Mini Launcher started")
@@ -49,7 +52,7 @@ class Plugin:
             os.path.join(
                 decky.DECKY_HOME,
                 "settings",
-                "mini-launcher.json",
+                "launchers.json",
             ),
             os.path.join(
                 decky.DECKY_USER_HOME,
