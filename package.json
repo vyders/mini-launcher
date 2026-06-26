@@ -1,0 +1,35 @@
+{
+  "name": "mini-launcher",
+  "version": "0.1.0",
+  "description": "A lightweight Decky Loader plugin for launching user-defined web applications using the SteamOS built-in browser.",
+  "type": "module",
+
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "test": "echo \"No tests yet\""
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyders/mini-player.git"
+  },
+
+  "keywords": [
+    "decky",
+    "launcher",
+    "steamos",
+    "decky-loader",
+    "utility"
+  ],
+
+  "author": "Vyders",
+
+  "license": "MIT",
+
+  "bugs": {
+    "url": "https://github.com/vyders/mini-player/issues"
+  },
+
+  "homepage": "https://github.com/vyders/mini-player#readme"
+}
